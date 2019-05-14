@@ -7,6 +7,15 @@
   "author": "Justin Field",
   "license": "Apache 2.0",
   "private": false,
+  "scripts": {
+    "jest": "jest test/ --coverage --collectCoverageFrom=lib/**/*.js",
+    "clean": "rm -fr build",
+    "format": "prettier --write 'lib/**/*.{ts,js}'",
+    "lint": "eslint lib/**/*.js",
+    "test": "yarn lint && yarn jest",
+    "test-server": "node --inspect user-acceptance-test/server.js  | ./node_modules/.bin/bunyan",
+    "publish-js-doc": "scripts/generate-jsdoc-site.sh"
+  },
   "devDependencies": {
     "coveralls": "^3.0.3",
     "eslint": "^5.16.0",
@@ -22,5 +31,10 @@
     "jsdoc": "^3.6.2",
     "nyc": "^14.1.1",
     "prettier": "^1.17.1"
+  },
+  "dependencies": {
+    "import-cwd": "^3.0.0",
+    "less": "^3.9.0",
+    "pify": "^4.0.1"
   }
 }
