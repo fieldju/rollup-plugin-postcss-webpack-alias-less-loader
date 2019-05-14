@@ -31,16 +31,9 @@
 		<ul class="nav navbar-nav">
 			
 			<li class="dropdown">
-				<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
-				<ul class="dropdown-menu ">
-					<li><a href="RollupFileManager.html">RollupFileManager</a></li>
-				</ul>
-			</li>
-			
-			<li class="dropdown">
 				<a href="global.html" class="dropdown-toggle" data-toggle="dropdown">Global<b class="caret"></b></a>
 				<ul class="dropdown-menu ">
-					<li><a href="global.html#replaceAliases">replaceAliases</a></li><li><a href="global.html#rollupPostcssLessLoader">rollupPostcssLessLoader</a></li>
+					<li><a href="global.html#rollupPostcssLessLoader">rollupPostcssLessLoader</a></li>
 				</ul>
 			</li>
 			
@@ -99,6 +92,7 @@
 <pre class="prettyprint source lang-less"><code>@import &quot;~bootstrap/less/common.less&quot;;
 @import &quot;~myAlias&quot;;
 </code></pre>
+<p>see: <a href="http://fieldju.com/rollup-plugin-postcss-webpack-alias-less-loader/global.html#rollupPostcssLessLoader">rollupPostcssLessLoader</a> for full docs</p>
 <p><code>~</code> will get resolved to <code>node_modules</code> by default but is overridable.</p>
 <p>usage below is a complete example that is used along side webpack to generate cjs and es modules:</p>
 <pre class="prettyprint source lang-javascript"><code>const alias = require('rollup-plugin-alias');
