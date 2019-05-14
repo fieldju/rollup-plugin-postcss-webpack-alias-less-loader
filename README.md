@@ -1,6 +1,6 @@
 # Rollup Plugin Postcss Webpack Alias Less Loader
 
-[![Build Status](https://travis-ci.org/fieldju/rollup-plugin-postcss-webpack-alias-less-loader.svg?branch=master)](https://travis-ci.org/fieldju/rollup-plugin-postcss-webpack-alias-less-loader) [![Coverage Status](https://coveralls.io/repos/github/fieldju/rollup-plugin-postcss-webpack-alias-less-loader/badge.svg?branch=master)](https://coveralls.io/github/fieldju/rollup-plugin-postcss-webpack-alias-less-loader?branch=master) 
+[![npm version](https://badge.fury.io/js/rollup-plugin-postcss-webpack-alias-less-loader.svg)](https://badge.fury.io/js/rollup-plugin-postcss-webpack-alias-less-loader) [![Build Status](https://travis-ci.org/fieldju/rollup-plugin-postcss-webpack-alias-less-loader.svg?branch=master)](https://travis-ci.org/fieldju/rollup-plugin-postcss-webpack-alias-less-loader) [![Coverage Status](https://coveralls.io/repos/github/fieldju/rollup-plugin-postcss-webpack-alias-less-loader/badge.svg?branch=master)](https://coveralls.io/github/fieldju/rollup-plugin-postcss-webpack-alias-less-loader?branch=master) 
 
 This is a custom loader for [Rollup Plugin Postcss](https://github.com/egoist/rollup-plugin-postcss) that allows users to define webpack style aliases and have them resolve.
 
