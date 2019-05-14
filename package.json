@@ -5,16 +5,18 @@
   "main": "lib/index.js",
   "repository": "https://github.com/fieldju/rollup-plugin-postcss-webpack-alias-less-loader.git",
   "author": "Justin Field",
-  "license": "Apache 2.0",
+  "license": "Apache-2.0",
   "private": false,
   "scripts": {
     "jest": "jest test/ --coverage --collectCoverageFrom=lib/**/*.js",
+    "jest-report-coverage": "jest --coverage --coverageReporters=text-lcov --collectCoverageFrom=lib/**/*.js | coveralls",
     "clean": "rm -fr build",
     "format": "prettier --write 'lib/**/*.{ts,js}'",
     "lint": "eslint lib/**/*.js",
     "test": "yarn lint && yarn jest",
-    "test-server": "node --inspect user-acceptance-test/server.js  | ./node_modules/.bin/bunyan",
-    "publish-js-doc": "scripts/generate-jsdoc-site.sh"
+    "generate-docs": "scripts/generate-jsdoc-site.sh",
+    "gh-pages": "gh-pages -d build/docs -t",
+    "travis-deploy-github-pages": "gh-pages -r \"https://${GH_TOKEN}@github.com/fieldju/rollup-plugin-postcss-webpack-alias-less-loader.git\" -d build/docs"
   },
   "devDependencies": {
     "coveralls": "^3.0.3",
@@ -36,5 +38,9 @@
     "import-cwd": "^3.0.0",
     "less": "^3.9.0",
     "pify": "^4.0.1"
-  }
+  },
+  "files": [
+    "lib",
+    "README.md"
+  ]
 }

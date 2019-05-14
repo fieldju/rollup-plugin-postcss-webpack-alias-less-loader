@@ -9,7 +9,7 @@
     "dateFormat": "ddd MMM Do YYYY",
     "outputSourceFiles": true,
     "outputSourcePath": true,
-    "systemName": "Measured",
+    "systemName": "Rollup Plugin Postcss Webpack Alias Less Loader",
     "copyright": "© 2019 Justin Field and Contributors.",
     "navType": "vertical",
     "theme": "cosmo",
@@ -17,7 +17,7 @@
     "collapseSymbols": false,
     "inverseNav": true,
     "protocol": "html://",
-    "methodHeadingReturns": false,
+    "methodHeadingReturns": false
   },
   "markdown": {
     "parser": "gfm",

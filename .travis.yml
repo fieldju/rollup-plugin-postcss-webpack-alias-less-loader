@@ -1,0 +1,25 @@
+language: node_js
+node_js:
+- 10
+jobs:
+  include:
+  - stage: publish code coverage
+    node_js: '10'
+    script:
+    - yarn lint
+    - yarn jest-report-coverage
+  - stage: release docs
+    if: type != pull_request AND branch = master
+    node_js: '10'
+    script:
+    - yarn generate-docs
+    - yarn travis-deploy-github-pages
+  - stage: npm release
+    if: type != pull_request AND tag IS present
+    node_js: '10'
+    script:
+    - scripts/publish.sh
+env:
+  global:
+  - secure: JeMTF25612sd2Fz2m3zWwlLQtZU68+owEa0aPfLL7PNp6LpGBsTYylIbxm7Li8CRU3eLLD9Roz85l0t3J7OZTrERBageUkxh1Dh8RZeh8hVCK9cqQ4+b/lDRPsyHPudczLC6HmC2LUwoOeKktsV6lEMf7hm9pT5ZZ02BZv+yXfnKZASqfFZtD00LU1GmjYssmCEQ8KcK1ztvArH0lnkm4NyCz5k0knEWGCM8MPNjrFPPf7k4mJ9yZKwdagwZ/aZa6pCK24tciBDS2jw9fsbHOE6h5sv6ec9bXgNOvL6nThm6gKp/EqTLZ+D8Z3+ovmnvA7olrJe6232ijwuktAZwukPGRpyLEH6oWteWBbXsztcxqaS4qmiZ7UxokunNw9z9Fts4/3fKocpHmoGXlVJBW1za96Jj9//Xly4mN/CTvik85zJK1QqdCVd7a5yTTHKVasR/iQGtwJA5cbOHHOZFpsQclyUC/jzw4yHqm3SvG9Q6XB9hcGJ/5IGxEk4A7zZdQe46sRKj26fcUrGd/JRT35iwmGUKuDzl2Oxek1SRknBm8g0rRrFFTJZbAhfs9M3DSV8XVE0D5e6TeBpBklI3jhirb7ZUmZ6KA/UpnFDozk7sl8+3cS7Uns9rAb/Ls9/cWN+QbnnfhOan2Ek6uEG0sNInENM174gdEbOWcb6KqAo=
+  - secure: fw9ZD1Vk+uGwSWzwGs3ctUC24Ag1R3YVQjeY6Qh9LDk5OXRafTaG+EMbJ4WX77691yutacQHMo+M3+1N1UAWFdvCxzssmydUbbwxK9n/m/+oXhi5E6g4tTDT2XZerJ3Pi1dXctrO87O6flMx6b/aCSH5oIIvDpNVc9yfBkqRBuPWW46u2M90i0Lq2Sg3aJfM4mvaSkL//8Iu+gxbQplxwKJPPSeUGYwUlWeu5lTh/K7UcTWWHTe/Jk07k3WNsKKCBNwNBXX4lgYrLUgsBuHbgYSPCFi79jY0yOrUxk//L4RwnHzRxFtNltGSyjRxLnXaS21COdY5I1DNZ9QGxf02rTw/gxrKuLtLjq05XwmCjtOx0OjMngW9W/wwtoY5t4Ku22+BjkDBciNhtXuCWq9+39SW036Wms5c1lSp45iZ5dVM0ipwjXZHawOQy7Z/k7cK0Y7T4S2vdqtwHB3rwYSh4ZJeNQJj9rjO/UlSylF9+9B6y9I8ASVeAyOPVsrxA2KcxL3f9Uxk7qQISdH8ijCvEnVq4ib+js79mThQgsdawcimEabyrGhswwQkwXxOUyvbfTfufnRJjzaD3h4pvOyb8Z6+KyQqbGsjriCnUB2mRwtcBvNr5e2k+82JsMRvt91Iq74fzZpznJKGL1RtOsbOMzFPinHRCnLHNkf5P5ht5uk=
